@@ -1,30 +1,437 @@
-{
-  "images": {
-    "base-images": [
-      {
-        "date": "2018-03-30", 
-        "description": "Testing base image", 
-        "images": {
-          "aws": {
-            "ap-northeast-1": "ami-1fa3a863"
-          }
-        }, 
-        "os": "centos6", 
-        "os_type": "redhat6", 
-        "uuid": "14b140a4-bd0b-457d-b174-e988bee3ca47"
-      }
-    ]
-  }, 
-  "versions": {
-    "cloudbreak": [
-      {
-        "images": [
-          "14b140a4-bd0b-457d-b174-e988bee3ca47"
-        ], 
-        "versions": [
-          "2.4.0"
-        ]
-      }
-    ]
-  }
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影像大师 - 专业图片处理工具集</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #14b8a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900">
+    <!-- Hero Section -->
+    <section
+        class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float"
+                style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center animate-fade-in-up">
+                <!-- Logo -->
+                <div
+                    class="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-blue-600 to-teal-400 rounded-3xl shadow-2xl mb-8">
+                    <svg class="w-14 h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+
+                <!-- Title -->
+                <h1 class="text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                    影像大师
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
+                    专业的图片处理工具集，让创作更简单
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="photo-master"
+                        class="px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>立即使用</span>
+                    </a>
+                    <a href="#features"
+                        class="px-8 py-4 bg-white/20 backdrop-blur-lg text-white rounded-xl font-semibold border-2 border-white/30 hover:bg-white/30 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>了解更多</span>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-20">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-white mb-2">5</div>
+                        <div class="text-white/80">核心功能</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-white mb-2">100%</div>
+                        <div class="text-white/80">免费开源</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-white mb-2">AI</div>
+                        <div class="text-white/80">智能驱动</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">五大核心功能</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    专业工具，满足你的所有图片处理需求
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Puzzle Master -->
+                <div class="feature-card bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fa-solid fa-th text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-100">拼图大师</h3>
+                    <p class="text-gray-400 mb-4">
+                        智能拼图布局，支持多种比例和边框设置。拖拽排序，自由调整，轻松创建精美拼图。
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-blue-500"></i>
+                            <span>多种预设比例</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-blue-500"></i>
+                            <span>拖拽排序</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-blue-500"></i>
+                            <span>自定义边框</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frame Master -->
+                <div class="feature-card bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fa-solid fa-border-all text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-100">边框大师</h3>
+                    <p class="text-gray-400 mb-4">
+                        为图片添加精美边框，支持纯色、渐变、图片边框。批量处理，一键导出。
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-purple-500"></i>
+                            <span>多种边框样式</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-purple-500"></i>
+                            <span>批量处理</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-purple-500"></i>
+                            <span>实时预览</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Watermark Master -->
+                <div class="feature-card bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fa-solid fa-droplet text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-100">水印大师</h3>
+                    <p class="text-gray-400 mb-4">
+                        智能水印添加，支持文字、图片、色板、直方图等多种水印类型。位置自由调整。
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-teal-500"></i>
+                            <span>多种水印类型</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-teal-500"></i>
+                            <span>智能色板提取</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-teal-500"></i>
+                            <span>直方图生成</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tag Master -->
+                <div class="feature-card bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fa-solid fa-tags text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-100">标签大师</h3>
+                    <p class="text-gray-400 mb-4">
+                        AI 智能识别图片内容，自动生成相关标签。支持批量处理，多语言输出。
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-orange-500"></i>
+                            <span>AI 智能识别</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-orange-500"></i>
+                            <span>批量生成</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-orange-500"></i>
+                            <span>多语言支持</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content Master -->
+                <div class="feature-card bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fa-solid fa-pen-fancy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-100">文案大师</h3>
+                    <p class="text-gray-400 mb-4">
+                        AI 生成小红书风格文案，支持多种风格。上传图片，一键生成吸引人的标题和正文。
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-pink-500"></i>
+                            <span>AI 文案生成</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-pink-500"></i>
+                            <span>多种风格</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-pink-500"></i>
+                            <span>一键复制</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AI Powered -->
+                <div
+                    class="feature-card bg-gradient-to-br from-blue-600 to-teal-400 rounded-2xl p-8 shadow-lg text-white">
+                    <div
+                        class="w-16 h-16 bg-white/20 backdrop-blur-lg rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <i class="fa-solid fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI 驱动</h3>
+                    <p class="text-white/90 mb-4">
+                        集成 OpenAI、Gemini 等主流 AI 模型，提供智能化的图片分析和内容生成能力。
+                    </p>
+                    <ul class="space-y-2 text-sm text-white/80">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check"></i>
+                            <span>多模型支持</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check"></i>
+                            <span>自定义 API</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check"></i>
+                            <span>本地处理</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="py-24 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <span class="gradient-text">技术栈</span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    现代化的前端技术，纯客户端运行
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+                    <div class="text-4xl mb-3">🎨</div>
+                    <h4 class="font-semibold text-gray-100 mb-2">HTML5 Canvas</h4>
+                    <p class="text-sm text-gray-400">高性能图像处理</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+                    <div class="text-4xl mb-3">💨</div>
+                    <h4 class="font-semibold text-gray-100 mb-2">Tailwind CSS</h4>
+                    <p class="text-sm text-gray-400">现代化 UI 设计</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+                    <div class="text-4xl mb-3">⚡</div>
+                    <h4 class="font-semibold text-gray-100 mb-2">Vanilla JS</h4>
+                    <p class="text-sm text-gray-400">轻量高效</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6 text-center shadow-lg">
+                    <div class="text-4xl mb-3">🤖</div>
+                    <h4 class="font-semibold text-gray-100 mb-2">AI APIs</h4>
+                    <p class="text-sm text-gray-400">智能能力集成</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-blue-600 via-blue-500 to-teal-400">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                准备好开始了吗？
+            </h2>
+            <p class="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+                完全免费，无需注册，立即体验专业的图片处理工具
+            </p>
+            <a href="photo-master"
+                class="inline-flex items-center gap-3 px-10 py-5 bg-white text-blue-600 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:bg-gray-100 transform hover:scale-105 transition-all">
+                <i class="fa-solid fa-rocket"></i>
+                <span>立即使用影像大师</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-gray-400">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div
+                            class="w-8 h-8 bg-gradient-to-tr from-blue-600 to-teal-400 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-white font-semibold">影像大师</span>
+                    </div>
+                    <p class="text-sm">专业的图片处理工具集</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="https://github.com/mkby/photo-master" class="hover:text-white transition-colors">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>© 2025 影像大师 MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
