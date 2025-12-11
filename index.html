@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>影像大师 (Image Master) - 专业图像处理工具集</title>
+    <title data-i18n="title">影像大师 (Image Master) - 专业图像处理工具集</title>
     <meta name="description" content="影像大师是一款专业的在线图像处理工具，提供拼图、边框、水印、AI标签、AI文案和壁纸生成等功能。隐私优先，本地处理。">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
@@ -72,6 +72,7 @@
         .gradient-text {
             background: linear-gradient(to right, #2563eb, #9333ea);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -108,18 +109,27 @@
                     </svg>
                 </div>
                 <span
-                    class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:to-white transition-all">影像大师</span>
+                    class="font-bold text-xl tracking-tight bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:to-white transition-all"
+                    data-i18n="logo_text">影像大师</span>
             </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-1">
                 <a href="#features"
-                    class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/10 rounded-full transition-all">功能特点</a>
+                    class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/10 rounded-full transition-all"
+                    data-i18n="nav.features">功能特点</a>
                 <a href="#tech"
-                    class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/10 rounded-full transition-all">技术栈</a>
+                    class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/10 rounded-full transition-all"
+                    data-i18n="nav.tech">技术栈</a>
                 <div class="w-px h-4 bg-white/10 mx-2"></div>
-                <a href="photo-master"
-                    class="bg-gradient-to-r from-violet-600 to-indigo-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-violet-600/25 transition-all hover:shadow-violet-600/40 hover:-translate-y-0.5">
+                <button id="lang-toggle"
+                    class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-white hover:bg-white/10 rounded-full transition-all">
+                    <i class="fa-solid fa-globe mr-1"></i> <span id="current-lang">EN</span>
+                </button>
+                <div class="w-px h-4 bg-white/10 mx-2"></div>
+                <a href="app.html"
+                    class="bg-gradient-to-r from-violet-600 to-indigo-600 hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-violet-600/25 transition-all hover:shadow-violet-600/40 hover:-translate-y-0.5"
+                    data-i18n="nav.start">
                     开始创作
                 </a>
             </div>
@@ -139,11 +149,17 @@
             <i class="fa-solid fa-xmark text-2xl"></i>
         </button>
         <a href="#features"
-            class="text-center py-4 text-2xl font-bold hover:text-blue-500 transition-colors mobile-link">功能特点</a>
-        <a href="#tech"
-            class="text-center py-4 text-2xl font-bold hover:text-blue-500 transition-colors mobile-link">技术栈</a>
-        <a href="photo-master"
-            class="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-4 rounded-2xl text-xl font-bold shadow-2xl shadow-violet-600/30 text-center">开始创作</a>
+            class="text-center py-4 text-2xl font-bold hover:text-blue-500 transition-colors mobile-link"
+            data-i18n="nav.features">功能特点</a>
+        <a href="#tech" class="text-center py-4 text-2xl font-bold hover:text-blue-500 transition-colors mobile-link"
+            data-i18n="nav.tech">技术栈</a>
+        <button id="mobile-lang-toggle"
+            class="text-center py-4 text-2xl font-bold hover:text-blue-500 transition-colors mobile-link">
+            <i class="fa-solid fa-globe mr-2"></i> <span id="mobile-current-lang">Switch Language</span>
+        </button>
+        <a href="app.html"
+            class="w-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-4 rounded-2xl text-xl font-bold shadow-2xl shadow-violet-600/30 text-center"
+            data-i18n="nav.start">开始创作</a>
     </div>
 
     <!-- Hero Section -->
@@ -166,34 +182,35 @@
                         class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
                 </span>
-                AI 驱动的下一代图像处理工具
+                <span data-i18n="hero.badge">AI 驱动的下一代图像处理工具</span>
             </div>
 
             <h1
                 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight mb-6 animate-fade-in-up delay-100">
-                释放你的 <br class="md:hidden" />
+                <span data-i18n="hero.title.prefix">释放你的</span> <br class="md:hidden" />
                 <span
-                    class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_30px_rgba(124,58,237,0.3)]">无限创意</span>
+                    class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_30px_rgba(124,58,237,0.3)]"
+                    data-i18n="hero.title.gradient">无限创意</span>
             </h1>
 
-            <p
-                class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
+            <p class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200"
+                data-i18n="hero.desc">
                 无需注册登录。在浏览器中体验 <strong>拼图、边框、水印、AI 标签、文案生成</strong> 等专业功能。
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
-                <a href="photo-master"
+                <a href="app.html"
                     class="group relative px-8 py-4 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full text-lg font-bold text-white shadow-[0_0_30px_rgba(124,58,237,0.4)] hover:shadow-[0_0_50px_rgba(124,58,237,0.6)] transition-all hover:-translate-y-1 overflow-hidden border border-white/10">
                     <div
                         class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 -skew-x-12 -translate-x-full">
                     </div>
                     <span class="relative flex items-center gap-2">
-                        <i class="fa-solid fa-rocket"></i> 立即开始创作
+                        <i class="fa-solid fa-rocket"></i> <span data-i18n="hero.btn.start">立即开始创作</span>
                     </span>
                 </a>
                 <a href="#features"
                     class="px-8 py-4 bg-white/5 border border-white/10 rounded-full text-lg font-bold text-white hover:bg-white/10 transition-all hover:-translate-y-1 backdrop-blur-sm">
-                    <i class="fa-solid fa-circle-info mr-2"></i> 了解更多
+                    <i class="fa-solid fa-circle-info mr-2"></i> <span data-i18n="hero.btn.learn">了解更多</span>
                 </a>
             </div>
 
@@ -205,7 +222,8 @@
                     <p
                         class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent mb-2">
                         6+</p>
-                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest">核心功能模块</p>
+                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest"
+                        data-i18n="stats.features">核心功能模块</p>
                 </div>
                 <!-- Stat 2 -->
                 <div
@@ -213,7 +231,8 @@
                     <p
                         class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent mb-2">
                         100%</p>
-                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest">完全免费使用</p>
+                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest"
+                        data-i18n="stats.free">完全免费使用</p>
                 </div>
                 <!-- Stat 3 -->
                 <div
@@ -221,7 +240,8 @@
                     <p
                         class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-violet-600 bg-clip-text text-transparent mb-2">
                         0</p>
-                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest">无需注册登录</p>
+                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest"
+                        data-i18n="stats.nologin">无需注册登录</p>
                 </div>
                 <!-- Stat 4 -->
                 <div
@@ -229,7 +249,8 @@
                     <p
                         class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-violet-600 bg-clip-text text-transparent mb-2">
                         ∞</p>
-                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest">无限创意可能</p>
+                    <p class="text-xs md:text-sm text-muted-foreground font-bold uppercase tracking-widest"
+                        data-i18n="stats.infinite">无限创意可能</p>
                 </div>
             </div>
         </div>
@@ -239,10 +260,10 @@
     <section id="features" class="py-20 bg-secondary/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2
-                    class="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-violet-500 to-cyan-500 bg-clip-text text-transparent"
+                    data-i18n="features.title">
                     六大核心模块</h2>
-                <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                <p class="text-xl text-muted-foreground max-w-2xl mx-auto" data-i18n="features.subtitle">
                     专为创作者打造的全能工具箱，满足你对图片处理的所有想象。
                 </p>
             </div>
@@ -255,8 +276,8 @@
                         class="w-14 h-14 bg-violet-600/10 rounded-2xl flex items-center justify-center text-violet-500 mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-puzzle-piece text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">拼图大师</h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="feature.puzzle.title">拼图大师</h3>
+                    <p class="text-muted-foreground leading-relaxed" data-i18n="feature.puzzle.desc">
                         支持多种经典布局比例，智能网格计算。拖拽图片即可自动吸附，轻松制作精美照片墙。
                     </p>
                 </div>
@@ -268,8 +289,8 @@
                         class="w-14 h-14 bg-fuchsia-500/10 rounded-2xl flex items-center justify-center text-fuchsia-500 mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-crop-simple text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">边框大师</h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="feature.frame.title">边框大师</h3>
+                    <p class="text-muted-foreground leading-relaxed" data-i18n="feature.frame.desc">
                         提供背景模糊、纯色、渐变及卡纸效果。自动读取并展示 EXIF 参数，让照片更具专业感。
                     </p>
                 </div>
@@ -281,8 +302,8 @@
                         class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-500 mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-signature text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">水印大师</h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <h3 class="text-2xl font-bold text-white mb-3" data-i18n="feature.watermark.title">水印大师</h3>
+                    <p class="text-muted-foreground leading-relaxed" data-i18n="feature.watermark.desc">
                         支持文字与图片水印，自由调节透明度与位置。保护版权的同时，彰显个人品牌个性。
                     </p>
                 </div>
@@ -295,10 +316,10 @@
                         <i class="fa-solid fa-tags text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">
-                        标签大师<sup
+                        <span data-i18n="feature.tag.title">标签大师</span><sup
                             class="text-[10px] font-extrabold px-1 py-0.5 ml-1 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 tracking-wider">AI</sup>
                     </h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <p class="text-muted-foreground leading-relaxed" data-i18n="feature.tag.desc">
                         基于Vision模型，智能识别图片内容，一键生成精准图片标签。
                     </p>
                 </div>
@@ -311,10 +332,10 @@
                         <i class="fa-solid fa-pen-nib text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">
-                        文案大师<sup
+                        <span data-i18n="feature.content.title">文案大师</span><sup
                             class="text-[10px] font-extrabold px-1 py-0.5 ml-1 rounded bg-pink-500/20 text-pink-300 border border-pink-500/30 tracking-wider">AI</sup>
                     </h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <p class="text-muted-foreground leading-relaxed" data-i18n="feature.content.desc">
                         告别写作焦虑。根据图片氛围，自动生成多种风格的爆款文案。
                     </p>
                 </div>
@@ -327,10 +348,10 @@
                         <i class="fa-solid fa-image text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">
-                        壁纸大师<sup
+                        <span data-i18n="feature.wallpaper.title">壁纸大师</span><sup
                             class="text-[10px] font-extrabold px-1 py-0.5 ml-1 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 tracking-wider">AI</sup>
                     </h3>
-                    <p class="text-muted-foreground leading-relaxed">
+                    <p class="text-muted-foreground leading-relaxed" data-i18n="feature.wallpaper.desc">
                         无需写提示词，自动调用文生图模型生成唯美壁纸，支持自定义裁剪，完美适配手机与电脑屏幕。
                     </p>
                 </div>
@@ -341,7 +362,7 @@
     <!-- Tech Stack -->
     <section id="tech" class="py-20 border-t border-white/5 bg-background">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-12 text-white">技术栈支持</h2>
+            <h2 class="text-3xl font-bold mb-12 text-white" data-i18n="tech.title">技术栈支持</h2>
             <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
                 <div class="flex flex-col items-center gap-2 group">
                     <i
@@ -379,10 +400,11 @@
                             d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     </svg>
                 </div>
-                <span class="font-bold text-lg text-white">影像大师</span>
+                <span class="font-bold text-lg text-white" data-i18n="logo_text">影像大师</span>
             </div>
             <p class="text-muted-foreground text-sm">
-                © 2025 Image Master. Made with <span class="text-red-500 animate-pulse">❤</span> for creators.
+                <span data-i18n="footer.rights">© 2025 Image Master. Made with</span> <span
+                    class="text-red-500 animate-pulse">❤</span> for creators.
             </p>
             <div class="flex gap-4">
                 <a href="https://www.github.com/mkby/photo-master"
@@ -393,6 +415,131 @@
     </footer>
 
     <script>
+        // Translations
+        const translations = {
+            "zh-CN": {
+                "title": "影像大师 (Image Master) - 专业图像处理工具集",
+                "nav.features": "功能特点",
+                "nav.tech": "技术栈",
+                "nav.start": "开始创作",
+                "hero.badge": "AI 驱动的下一代图像处理工具",
+                "hero.title.prefix": "释放你的",
+                "hero.title.gradient": "无限创意",
+                "hero.desc": "无需注册登录。在浏览器中体验 <strong>拼图、边框、水印、AI 标签、文案生成</strong> 等专业功能。",
+                "hero.btn.start": "立即开始创作",
+                "hero.btn.learn": "了解更多",
+                "stats.features": "核心功能模块",
+                "stats.free": "完全免费使用",
+                "stats.nologin": "无需注册登录",
+                "stats.infinite": "无限创意可能",
+                "features.title": "六大核心模块",
+                "features.subtitle": "专为创作者打造的全能工具箱，满足你对图片处理的所有想象。",
+                "feature.puzzle.title": "拼图大师",
+                "feature.puzzle.desc": "支持多种经典布局比例，智能网格计算。拖拽图片即可自动吸附，轻松制作精美照片墙。",
+                "feature.frame.title": "边框大师",
+                "feature.frame.desc": "提供背景模糊、纯色、渐变及卡纸效果。自动读取并展示 EXIF 参数，让照片更具专业感。",
+                "feature.watermark.title": "水印大师",
+                "feature.watermark.desc": "支持文字与图片水印，自由调节透明度与位置。保护版权的同时，彰显个人品牌个性。",
+                "feature.tag.title": "标签大师",
+                "feature.tag.desc": "基于Vision模型，智能识别图片内容，一键生成精准图片标签。",
+                "feature.content.title": "文案大师",
+                "feature.content.desc": "告别写作焦虑。根据图片氛围，自动生成多种风格的爆款文案。",
+                "feature.wallpaper.title": "壁纸大师",
+                "feature.wallpaper.desc": "无需写提示词，自动调用文生图模型生成唯美壁纸，支持自定义裁剪，完美适配手机与电脑屏幕。",
+                "tech.title": "技术栈支持",
+                "logo_text": "影像大师",
+                "footer.rights": "© 2025 Image Master. Made with"
+            },
+            "en-US": {
+                "title": "Image Master - Professional Image Processing Toolkit",
+                "nav.features": "Features",
+                "nav.tech": "Tech Stack",
+                "nav.start": "Start Creating",
+                "hero.badge": "AI-Powered Next-Gen Image Tool",
+                "hero.title.prefix": "Unleash Your",
+                "hero.title.gradient": "Infinite Creativity",
+                "hero.desc": "No registration required. Experience professional features like <strong>Collage, Frame, Watermark, AI Tags, Copywriting</strong> in your browser.",
+                "hero.btn.start": "Start Now",
+                "hero.btn.learn": "Learn More",
+                "stats.features": "Core Modules",
+                "stats.free": "100% Free",
+                "stats.nologin": "No Login",
+                "stats.infinite": "Infinite High",
+                "features.title": "Six Core Modules",
+                "features.subtitle": "An all-in-one toolbox designed for creators to meet all your image processing needs.",
+                "feature.puzzle.title": "Puzzle Master",
+                "feature.puzzle.desc": "Supports various classic layout ratios and smart grid calculations. Drag and drop images to automatically snap, designing beautiful photo walls.",
+                "feature.frame.title": "Frame Master",
+                "feature.frame.desc": "Provides background blur, solid color, gradient and matte effects. Automatically reads and displays EXIF parameters to make photos more professional.",
+                "feature.watermark.title": "Watermark Master",
+                "feature.watermark.desc": "Supports text and image watermarks, with adjustable opacity and position. Protect copyright while highlighting personal brand personality.",
+                "feature.tag.title": "Tag Master",
+                "feature.tag.desc": "Based on Vision models, intelligently identifies image content and generates accurate image tags with one click.",
+                "feature.content.title": "Copywriting Master",
+                "feature.content.desc": "Say goodbye to writing anxiety. Automatically generate multiple styles of popular copywriting based on image atmosphere.",
+                "feature.wallpaper.title": "Wallpaper Master",
+                "feature.wallpaper.desc": "No prompts needed, automatically calls text-to-image models to generate beautiful wallpapers, supports custom cropping, perfectly adapted to mobile and computer screens.",
+                "tech.title": "Tech Stack Support",
+                "logo_text": "Image Master",
+                "footer.rights": "© 2025 Image Master. Made with"
+            }
+        };
+
+        // Current Language
+        let currentLang = localStorage.getItem('lang') || 'zh-CN';
+
+        // Initialize
+        function initLanguage() {
+            setLanguage(currentLang);
+            updateToggleButton();
+        }
+
+        // Set Language
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            document.documentElement.lang = lang;
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'P' || el.tagName === 'DIV' || el.tagName === 'SPAN' || el.tagName === 'H1') {
+                        el.innerHTML = translations[lang][key];
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+
+            updateToggleButton();
+        }
+
+        // Update Button Text
+        function updateToggleButton() {
+            const btnText = document.getElementById('current-lang');
+            const mobileBtnText = document.getElementById('mobile-current-lang');
+
+            if (btnText) btnText.innerText = currentLang === 'zh-CN' ? 'EN' : '中';
+            if (mobileBtnText) mobileBtnText.innerText = currentLang === 'zh-CN' ? 'Switch to English' : '切换到中文';
+        }
+
+        // Event Listeners
+        const langToggle = document.getElementById('lang-toggle');
+        const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+
+        function toggleLangHandler() {
+            const newLang = currentLang === 'zh-CN' ? 'en-US' : 'zh-CN';
+            setLanguage(newLang);
+        }
+
+        if (langToggle) langToggle.addEventListener('click', toggleLangHandler);
+        if (mobileLangToggle) mobileLangToggle.addEventListener('click', toggleLangHandler);
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initLanguage);
+
+
         // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
